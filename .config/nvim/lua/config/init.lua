@@ -1,6 +1,6 @@
 require("config.lazy")
 require("config.lsp")
---- require("config.tailwind")
+require("config.tailwind")
 require("config.rustaceanvim")
 
 vim.g.mapleader = ' '
