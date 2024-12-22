@@ -21,7 +21,8 @@ return {
 
 					if res then
 						local client = vim.lsp.get_client_by_id(ctx.client_id)
-						vim.lsp.util.apply_text_edits(res, bufnr, client and client.offset_encoding or "utf-16")
+						vim.lsp.util.apply_text_edits(res, bufnr,
+							client and client.offset_encoding or "utf-16")
 						vim.api.nvim_buf_call(bufnr, function()
 							vim.cmd("silent noautocmd update")
 						end)
@@ -36,9 +37,9 @@ return {
 
 		null_ls.setup({
 			sources = {
+				null_ls.builtins.formatting.leptosfmt,
 				null_ls.builtins.formatting.stylua,
-				--                null_ls.builtins.diagnostics.mypy,
-				--                null_ls.builtins.diagnostics.ruff,
+				null_ls.builtins.diagnostics.ruff,
 			},
 			debug = false,
 			on_attach = function(client, bufnr)

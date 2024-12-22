@@ -109,3 +109,4 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 alias ls="lsd"
 alias cat="bat"
+
