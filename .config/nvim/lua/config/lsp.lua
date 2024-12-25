@@ -1,5 +1,6 @@
 vim.opt.signcolumn = "yes"
 
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	desc = "LSP actions",
 	callback = function(event)
@@ -23,7 +24,12 @@ require("mason").setup({})
 require("mason-lspconfig").setup_handlers({
 	function(server_name)
 		if server_name ~= "rust_analyzer" then
-			require("lspconfig")[server_name].setup({})
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+			require("lspconfig")[server_name].setup({
+				capabilities = capabilities
+			})
 		end
 	end,
 })

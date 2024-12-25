@@ -9,13 +9,6 @@ return {
 		end,
 	},
 	{
-		"rayliwell/nvim-ts-autotag",
-		ft = "rust",
-		config = function()
-			require("nvim-ts-autotag").setup()
-		end,
-	},
-	{
 		"Saecki/crates.nvim",
 		event = { "BufRead Cargo.toml" },
 		opts = {

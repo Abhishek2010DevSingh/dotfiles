@@ -15,7 +15,7 @@ return {
 		event = "InsertEnter",
 		config = true,
 	},
-	{ -- Add indentation guides even on blank lines
+	{
 		'lukas-reineke/indent-blankline.nvim',
 		main = 'ibl',
 		opts = {},
@@ -35,7 +35,8 @@ return {
 	{ "nvim-treesitter/nvim-treesitter" },
 	{
 		"L3MON4D3/LuaSnip",
-		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		version = "v2.*",
 		build = "make install_jsregexp"
-	}
+	},
+	"Jezda1337/nvim-html-css"
 }
